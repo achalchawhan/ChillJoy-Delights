@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Order{% endblock title %}
+
+{% block body %}
+
+<div class="container mb-4 ">
+<center>
+<h1>Ur Order Plz..</h1>
+</center>
+
+    <form method="post" action="/order">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="name" class="form-control" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone No:</label>
+          <input type="phone" class="form-control" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+            <label for="choices">Select the item</label>
+            <select multiple class="form-control" id="choices" name="choices">
+              <option>Ice Crem</option>
+              <option>Cone</option>
+              <option>Familypack</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" id="quantity" name="quantity">
+        </div>
+        
+        <div class="form-group">
+          <label for="desc">Tell me about ur icecrem....</label>
+          <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea class="form-control" id="address" rows="3" name="address"></textarea>
+        </div>
+
+        
+
+        <button type="Submit" class="btn btn-primary">Submit</button>
+        <button type="Reset" class="btn btn-primary">Reset</button>
+      </form>
+</div>
+{% endblock body %}

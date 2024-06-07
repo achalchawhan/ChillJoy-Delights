@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}contactus{% endblock title %}
+
+{% block body %}
+<div class="container-fluid px-0 mb-4">
+    <img src="/static/contactus.jpg" class="d-block" width="1519px" height="390px" alt="..."> 
+</div>
+<div class="container mb-4 ">
+<center>
+<h1>CONTACT US</h1>
+</center>
+
+    <form method="POST" action="/contactus">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="name" class="form-control" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone No:</label>
+          <input type="phone" class="form-control" id="phone" name="phone">
+        </div>
+        
+        
+    
+        <div class="form-group">
+          <label for="desc">Tell me about what u what to cantact me for....</label>
+          <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+        </div>
+        <button type="Submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+{% endblock body %}
